@@ -14,7 +14,7 @@ resource "null_resource" "create_deploy_script" {
   triggers = { always_run = "${timestamp()}" }
   provisioner "local-exec" {
     command = <<EOT
-      echo swa deploy ./frontend/ --env production --deployment-token '${azurerm_static_web_app.frontend_webapp.api_key}' > deploy.bat
+      echo swa deploy ../frontend_app/ --env production --deployment-token '${azurerm_static_web_app.frontend_webapp.api_key}' > deploy.bat
     EOT
   }
 }
@@ -23,6 +23,6 @@ resource "null_resource" "deploy_command" {
   depends_on = [null_resource.create_deploy_script]
   triggers   = { always_run = "${timestamp()}" }
   provisioner "local-exec" {
-    command = "swa deploy ./frontend/ --env production --deployment-token '${azurerm_static_web_app.frontend_webapp.api_key}'"
+    command = "swa deploy ../frontend_app/ --env production --deployment-token '${azurerm_static_web_app.frontend_webapp.api_key}'"
   }
 }

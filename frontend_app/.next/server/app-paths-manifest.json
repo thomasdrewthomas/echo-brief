@@ -1,0 +1,10 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/login/route": "app/api/login/route.js",
+  "/api/register/route": "app/api/register/route.js",
+  "/audio-upload/page": "app/audio-upload/page.js",
+  "/audio-recordings/page": "app/audio-recordings/page.js",
+  "/login/page": "app/login/page.js",
+  "/prompt-management/page": "app/prompt-management/page.js",
+  "/page": "app/page.js"
+}

@@ -87,7 +87,7 @@ resource "azurerm_linux_web_app" "backend_webapp" {
 
 resource "time_sleep" "wait_before_start_backend" {
   depends_on      = [data.archive_file.python_backend_webapp_package]
-  create_duration = "360s" # Adjust the time as needed
+  create_duration = "600s" # Adjust the time as needed
 }
 
 resource "null_resource" "publish_backend_app_zip" {

@@ -1,4 +1,3 @@
-
 resource "azurerm_service_plan" "az_func_audio_service_plan" {
   name                = "${local.name_prefix}-audio-processor-${random_string.unique.result}"
   resource_group_name = azurerm_resource_group.rg.name
@@ -32,6 +31,7 @@ resource "azurerm_application_insights" "functions_app_insights" {
   resource_group_name = azurerm_resource_group.rg.name
   application_type    = "web"
   tags                = local.default_tags
+  workspace_id        = azurerm_log_analytics_workspace.log_analytics_workspace.id
 }
 
 resource "azurerm_linux_function_app" "function_call_function_app" {
