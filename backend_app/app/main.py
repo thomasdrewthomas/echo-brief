@@ -39,7 +39,7 @@ app.include_router(prompts.router)
 # # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://gentle-coast-0215cbd03.6.azurestaticapps.net"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

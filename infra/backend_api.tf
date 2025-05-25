@@ -50,7 +50,7 @@ resource "azurerm_linux_web_app" "backend_webapp" {
   site_config {
     minimum_tls_version = "1.2"
     cors {
-      allowed_origins = ["*"]
+      allowed_origins = ["https://gentle-coast-0215cbd03.6.azurestaticapps.net"]
     }
     application_stack {
       python_version = "3.11"
